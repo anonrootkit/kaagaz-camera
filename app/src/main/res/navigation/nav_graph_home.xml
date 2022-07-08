@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/albums">
+
+    <fragment
+        android:id="@+id/albums"
+        android:name="com.fiore.kaagaz.app.ui.gallery.Albums"
+        android:label="Albums"
+        tools:layout="@layout/fragment_albums">
+        <action
+            android:id="@+id/action_albums_to_photos"
+            app:destination="@id/photos" />
+        <action
+            android:id="@+id/action_albums_to_camera"
+            app:destination="@id/camera" />
+    </fragment>
+    <fragment
+        android:id="@+id/photos"
+        android:name="com.fiore.kaagaz.app.ui.gallery.Photos"
+        android:label="Photos"
+        tools:layout="@layout/fragment_photos">
+        <action
+            android:id="@+id/action_photos_to_preview"
+            app:destination="@id/preview" />
+        <action
+            android:id="@+id/action_photos_to_camera"
+            app:destination="@id/camera" />
+        <argument
+            android:name="album"
+            app:argType="com.fiore.kaagaz.app.domain.model.Album" />
+    </fragment>
+    <fragment
+        android:id="@+id/preview"
+        android:name="com.fiore.kaagaz.app.ui.gallery.Preview"
+        android:label="Preview"
+        tools:layout="@layout/fragment_preview" >
+        <argument
+            android:name="photo"
+            app:argType="com.fiore.kaagaz.app.domain.model.Photo" />
+    </fragment>
+    <fragment
+        android:id="@+id/camera"
+        android:name="com.fiore.kaagaz.app.ui.camera.Camera"
+        android:label="Camera"
+        tools:layout="@layout/fragment_camera">
+        <action
+            android:id="@+id/action_camera_to_preview"
+            app:destination="@id/preview" />
+    </fragment>
+</navigation>

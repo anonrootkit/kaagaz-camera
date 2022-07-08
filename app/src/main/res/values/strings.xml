@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kaagaz Camera</string>
+    <string name="albums">Albums</string>
+    <string name="photos">Photos</string>
+    <string name="need_camera_permissions_msg">Permissions are required to access camera</string>
+    <string name="capture_some_moments_and_create_new_albums">Capture some moments and create new albums</string>
+    <string name="no_photos_here">No photos here</string>
+</resources>
